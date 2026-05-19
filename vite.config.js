@@ -1,12 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-   test: {
+  plugins: [react(), tailwindcss()],
+  test: {
     globals: true,
-    environment: 'happy-dom',
-    setupFiles: './tests/setup.js',
+    environment: "happy-dom",
+    setupFiles: "./setup.test.js",
   },
-})
+});
