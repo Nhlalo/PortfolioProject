@@ -1,4 +1,3 @@
-// App.jsx
 import { useState, useEffect } from "react";
 import {
   Github,
@@ -32,6 +31,7 @@ function App() {
         style={{
           transform: `translate(${mousePosition.x - 192}px, ${mousePosition.y - 192}px)`,
         }}
+        aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
@@ -45,36 +45,42 @@ function App() {
           </div>
           <div className="flex gap-4">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Nhlalo"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+              aria-label="GitHub Profile"
             >
-              <Github size={20} />
+              <Github size={20} aria-hidden="true" />
             </a>
             <a
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+              aria-label="LinkedIn Profile"
             >
-              <Linkedin size={20} />
+              <Linkedin size={20} aria-hidden="true" />
             </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=nhlalonkosi@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+              aria-label="Send Email"
             >
-              <Mail size={20} />
+              <Mail size={20} aria-hidden="true" />
             </a>
           </div>
         </header>
 
         {/* Hero */}
         <section className="text-center mb-24">
-          <div className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full text-sm mb-6">
-            <Sparkles size={14} />
+          <div
+            className="inline-flex items-center gap-2 bg-purple-500/20 px-4 py-2 rounded-full text-sm mb-6"
+            aria-label="Job status: Open to junior opportunities"
+          >
+            <Sparkles size={14} aria-hidden="true" />
             <span>Open to junior opportunities</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -92,13 +98,22 @@ function App() {
         </section>
 
         {/* Featured Projects */}
-        <section className="mb-24">
+        <section className="mb-24" aria-labelledby="featured-work-heading">
           <div className="flex items-center gap-2 mb-8">
-            <div className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500" />
-            <span className="text-sm uppercase tracking-wider text-purple-300">
+            <div
+              className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500"
+              aria-hidden="true"
+            />
+            <span
+              id="featured-work-heading"
+              className="text-sm uppercase tracking-wider text-purple-300"
+            >
               Featured Work
             </span>
-            <div className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500" />
+            <div
+              className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500"
+              aria-hidden="true"
+            />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -122,8 +137,8 @@ function App() {
                 "Email notifications",
                 "REST API",
               ]}
-              liveLink="https://velofitness.netlify.app"
-              codeLink="https://github.com/yourusername/velo-fitness-frontend"
+              liveLink="https://velofitness.netlify.app/"
+              codeLink="https://github.com/Nhlalo/VeloFitness"
               gradient="from-emerald-500 to-teal-500"
             />
 
@@ -146,24 +161,33 @@ function App() {
                 "Location-aware",
                 "Concert finder",
               ]}
-              liveLink="https://musicfier.netlify.app"
-              codeLink="https://github.com/yourusername/musicfier"
+              liveLink="https://musicfier.netlify.app/"
+              codeLink="https://github.com/Nhlalo/Musicfier"
               gradient="from-purple-500 to-pink-500"
             />
           </div>
         </section>
 
         {/* Skills & Tech */}
-        <section className="mb-24">
+        <section className="mb-24" aria-labelledby="tech-stack-heading">
           <div className="flex items-center gap-2 mb-8">
-            <div className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500" />
-            <span className="text-sm uppercase tracking-wider text-purple-300">
+            <div
+              className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500"
+              aria-hidden="true"
+            />
+            <span
+              id="tech-stack-heading"
+              className="text-sm uppercase tracking-wider text-purple-300"
+            >
               Tech Stack
             </span>
-            <div className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500" />
+            <div
+              className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500"
+              aria-hidden="true"
+            />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <SkillCard
               title="Frontend"
               items={["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite"]}
@@ -177,6 +201,10 @@ function App() {
               items={["PostgreSQL", "Prisma", "SQL"]}
             />
             <SkillCard
+              title="Testing"
+              items={["Vitest", "React Testing Library", "Jest"]}
+            />
+            <SkillCard
               title="Tools"
               items={["Git", "Stripe", "JWT", "Render"]}
             />
@@ -184,13 +212,22 @@ function App() {
         </section>
 
         {/* What I Bring */}
-        <section className="mb-24">
+        <section className="mb-24" aria-labelledby="values-heading">
           <div className="flex items-center gap-2 mb-8">
-            <div className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500" />
-            <span className="text-sm uppercase tracking-wider text-purple-300">
+            <div
+              className="h-px flex-1 bg-linear-to-r from-transparent to-purple-500"
+              aria-hidden="true"
+            />
+            <span
+              id="values-heading"
+              className="text-sm uppercase tracking-wider text-purple-300"
+            >
               Beyond Code
             </span>
-            <div className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500" />
+            <div
+              className="h-px flex-1 bg-linear-to-l from-transparent to-purple-500"
+              aria-hidden="true"
+            />
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -235,9 +272,13 @@ function ProjectCard({
   gradient,
 }) {
   return (
-    <div className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+    <div
+      className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1"
+      aria-label={`Project: ${title}. ${description}`}
+    >
       <div
         className={`w-14 h-14 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center mb-4`}
+        aria-hidden="true"
       >
         {icon}
       </div>
@@ -246,7 +287,10 @@ function ProjectCard({
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div
+        className="flex flex-wrap gap-2 mb-4"
+        aria-label={`Technologies used: ${tags.join(", ")}`}
+      >
         {tags.slice(0, tags.length).map((tag) => (
           <span
             key={tag}
@@ -257,7 +301,10 @@ function ProjectCard({
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-3 mb-5">
+      <div
+        className="flex flex-wrap gap-3 mb-5"
+        aria-label={`Features: ${features.join(", ")}`}
+      >
         {features.map((f) => (
           <span key={f} className="text-xs text-gray-400">
             • {f}
@@ -269,16 +316,20 @@ function ProjectCard({
         <a
           href={liveLink}
           target="_blank"
+          rel="noopener noreferrer"
           className="text-sm flex items-center gap-1 text-purple-300 hover:text-purple-200 transition"
+          aria-label={`View live demo of ${title} (opens in new tab)`}
         >
-          Live Demo <ExternalLink size={14} />
+          Live Demo <ExternalLink size={14} aria-hidden="true" />
         </a>
         <a
           href={codeLink}
           target="_blank"
+          rel="noopener noreferrer"
           className="text-sm flex items-center gap-1 text-gray-400 hover:text-gray-300 transition"
+          aria-label={`View source code for ${title} on GitHub (opens in new tab)`}
         >
-          Code <Github size={14} />
+          Code <Github size={14} aria-hidden="true" />
         </a>
       </div>
     </div>
@@ -288,7 +339,10 @@ function ProjectCard({
 // Skill Card Component
 function SkillCard({ title, items }) {
   return (
-    <div className="bg-white/5 rounded-xl p-4 text-center">
+    <div
+      className="bg-white/5 rounded-xl p-4 text-center"
+      aria-label={`${title} skills: ${items.join(", ")}`}
+    >
       <h4 className="font-semibold text-purple-300 mb-2">{title}</h4>
       <div className="flex flex-wrap gap-2 justify-center">
         {items.map((item) => (
@@ -304,8 +358,14 @@ function SkillCard({ title, items }) {
 // Value Card Component
 function ValueCard({ icon, title, description }) {
   return (
-    <div className="bg-white/5 rounded-xl p-5 text-center">
-      <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-3 text-purple-300">
+    <div
+      className="bg-white/5 rounded-xl p-5 text-center"
+      aria-label={`Value: ${title}. ${description}`}
+    >
+      <div
+        className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mx-auto mb-3 text-purple-300"
+        aria-hidden="true"
+      >
         {icon}
       </div>
       <h4 className="font-semibold mb-2">{title}</h4>
