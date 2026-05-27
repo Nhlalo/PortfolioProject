@@ -54,7 +54,7 @@ function App() {
               <Github size={20} aria-hidden="true" />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="www.linkedin.com/in/nhlalonhle-nkosi"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
